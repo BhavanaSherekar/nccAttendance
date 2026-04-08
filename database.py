@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = "sqlite:///./attendance.db"
+import os
+DATABASE_URL = os.getenv("postgresql://postgres:[YOUR-PASSWORD]@db.kbubdubbrjgvycqegvux.supabase.co:5432/postgres")
 
 engine = create_engine(
     DATABASE_URL,
@@ -10,3 +11,4 @@ engine = create_engine(
 
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
+
