@@ -4,7 +4,7 @@ import os
 
 from database import SessionLocal
 from models import Attendance
-from attendance_engine import process_attendance   # ✅ use your updated function
+from attendance import process_attendance   # ✅ use your updated function
 
 app = FastAPI()
 
